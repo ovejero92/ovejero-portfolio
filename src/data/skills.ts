@@ -1,7 +1,6 @@
 import { Skill } from '../types/index';
 
 export const skills: Skill[] = [
-  // Frontend
   { name: 'React', category: 'frontend' },
   { name: 'Next.js', category: 'frontend' },
   { name: 'TypeScript', category: 'frontend' },
@@ -10,7 +9,6 @@ export const skills: Skill[] = [
   { name: 'Angular', category: 'frontend' },
   { name: 'Ionic', category: 'frontend' },
   
-  // Backend
   { name: 'Node.js', category: 'backend' },
   { name: 'Python', category: 'backend' },
   { name: 'Django', category: 'backend' },
@@ -19,12 +17,10 @@ export const skills: Skill[] = [
   { name: 'C#', category: 'backend' },
   { name: 'PHP', category: 'backend' },
   
-  // Database
   { name: 'MySQL', category: 'database' },
   { name: 'MongoDB', category: 'database' },
   { name: 'PostgreSQL', category: 'database' },
   
-  // Tools
   { name: 'Git', category: 'tools' },
   { name: 'Docker', category: 'tools' },
   { name: 'REST APIs', category: 'tools' },

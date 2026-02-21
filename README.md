@@ -5,7 +5,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, run the development server:
 
 ```bash
-npm run dev
+Get-Process node | Stop-Process -Force 2>$null; Remove-Item -Recurse -Force .next 2>$null; npm run dev
 # or
 yarn dev
 # or

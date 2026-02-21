@@ -7,7 +7,6 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  // Detectar si es el proyecto de TurnosOK para mostrar iframe
   const isTurnosOK = project.liveUrl?.includes('turnosok');
 
   return (

@@ -2,7 +2,6 @@
 none; outline: none; scroll-behavior: smooth; font-family: 'Poppins',
 sans-serif;}
 
-/* clases para las fuentes de Google */
 .allkin-regular { font-family: 'Allkin', system-ui; font-weight: 400; font-style: normal; }
 .ramsina-regular { font-weight: 400; font-style: normal; }
 :root{
@@ -216,7 +215,6 @@ var(--second-bg-color);box-shadow:0 0 1rem var(--main-color); }
     } 
 .portfolio-container .portfolio-box{position: relative;border-radius:
 2rem;box-shadow: 0 0 1rem var(--bg-color);overflow: hidden;display: flex;} 
-/* portfolio-box styles preserved above */
 img{width: 100%;transition: .5s ease;} 
 .portfolio-box:hover img{transform:
 scale(1.1);} 
@@ -248,9 +246,7 @@ var(--second-bg-color);border-radius: .8rem;margin: .7rem 0;}
 .contact form
 .btn{margin-top: 2rem;cursor: pointer;} 
 
-/* ==== RESPONSIVE DESIGN ==== */
 
-/* Desktop grande (> 1200px) */
 @media (min-width: 1201px) {
     section {
         padding: 10rem 4rem 2rem;
@@ -260,7 +256,6 @@ var(--second-bg-color);border-radius: .8rem;margin: .7rem 0;}
     }
 }
 
-/* Tablet/Laptop mediano (992px - 1200px) */
 @media (max-width: 1200px) {
     html { font-size: 55%; }
     section {
@@ -296,7 +291,6 @@ var(--second-bg-color);border-radius: .8rem;margin: .7rem 0;}
     }
 }
 
-/* Tablet pequeño (768px - 991px) */
 @media (max-width: 991px) {
     section {
         padding: 8rem 2rem 2rem;
@@ -332,7 +326,6 @@ var(--second-bg-color);border-radius: .8rem;margin: .7rem 0;}
     }
 }
 
-/* Celular (< 768px) */
 @media (max-width: 768px) {
     html { font-size: 50%; }
     section {
@@ -391,7 +384,6 @@ var(--second-bg-color);border-radius: .8rem;margin: .7rem 0;}
     }
 }
 
-/* Celular muy pequeño (< 480px) */
 @media (max-width: 480px) {
     html { font-size: 45%; }
     section {

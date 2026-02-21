@@ -30,7 +30,6 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        {/* preconnect + font stylesheet for Allkin and Ramsina */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

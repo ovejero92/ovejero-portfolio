@@ -61,7 +61,6 @@ export default function TechStack() {
 
   const handleMouseEnter = (name: string) => {
     if (carouselRef.current) {
-      // Capturar el transform actual del carrusel
       const computedStyle = window.getComputedStyle(carouselRef.current);
       const transform = computedStyle.transform;
       setFrozenTransform(transform);

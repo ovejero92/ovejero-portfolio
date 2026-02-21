@@ -1,14 +1,3 @@
-/* 
-  NOTE: This file previously contained Tailwind CSS imports.
-  All Tailwind CSS has been removed and replaced with custom CSS in src/styles/main.css
-  
-  If you need to restore Tailwind functionality, uncomment the lines below:
-  
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-*/
-
 :root {
   --primary-50: #f0f9ff;
   --primary-100: #e0f2fe;
@@ -44,11 +33,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
 }
-
-/* h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.2;
-} */
 
 a {
   transition-property: color, opacity;
@@ -173,12 +157,10 @@ a {
   animation: fadeIn 0.6s ease-out;
 }
 
-/* Efecto hover mejorado */
 .group-hover\:scale-110:hover {
   transform: scale(1.1);
 }
 
-/* Divisores y líneas */
 .divider {
   border-top: 1px solid #e5e7eb;
   height: 1px;
@@ -188,7 +170,6 @@ a {
   border-top-color: #374151;
 }
 
-/* Pseudo elemento para decoración */
 .after-line::after {
   content: '';
   position: absolute;

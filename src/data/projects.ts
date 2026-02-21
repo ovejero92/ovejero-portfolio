@@ -5,10 +5,10 @@ export const projects: Project[] = [
     id: '1',
     title: 'TurnosOK - Sistema de Gestión de Turnos',
     description: 'Plataforma completa para gestión de turnos con Django backend, autenticación segura, sistema de reservas en tiempo real y panel administrativo. Incluye notificaciones automáticas y calendario interactivo.',
-    image: '/projects/turnosok.jpg', // Vas a agregar esta imagen
+    image: '/projects/turnosok.jpg', 
     technologies: ['Django', 'Python', 'PostgreSQL', 'React', 'REST API'],
     liveUrl: 'https://www.turnosok.com',
-    githubUrl: 'https://github.com/ovejero92/turnosok', // Ajustá el link
+    githubUrl: 'https://github.com/ovejero92/turnosok', 
     featured: true,
   },
   {

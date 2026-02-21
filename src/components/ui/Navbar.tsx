@@ -30,7 +30,6 @@ export default function Navbar() {
           GO
         </a>
 
-        {/* Desktop Navbar */}
         <div className="navBar desktop-nav">
           {menuItems.map((item) => (
             <a key={item.href} href={item.href}>
@@ -39,7 +38,6 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Mobile Controls */}
         <div className="controls">
           <ThemeToggle />
           <a href="#contact" className="btn">
@@ -50,7 +48,6 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-      {/* Mobile Navbar Overlay */}
       {isOpen && (
         <div className="navBar mobile-nav active">
           {menuItems.map((item) => (

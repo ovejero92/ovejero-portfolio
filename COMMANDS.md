@@ -9,7 +9,7 @@ npm install
 
 ### Ejecutar en desarrollo
 ```bash
-npm run dev
+Get-Process node | Stop-Process -Force 2>$null; Remove-Item -Recurse -Force .next 2>$null; npm run dev
 ```
 Abre [http://localhost:3000](http://localhost:3000)
 
