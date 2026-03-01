@@ -4,6 +4,7 @@ import "./globals.css";
 import "../styles/main.css";
 import "../styles/index.css";
 import Script from 'next/script';
+import { LanguageProvider } from '../context/LanguageContext';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,7 +46,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
         <Script
           src="https://kit.fontawesome.com/76e20a326e.js"
           crossOrigin="anonymous"

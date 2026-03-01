@@ -3,15 +3,21 @@
 import { useRef, useEffect, useState } from 'react';
 import { Project } from '@/types';
 import Image from 'next/image';
+import { useLanguage } from '../../context/LanguageContext';
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const { t, language } = useLanguage();
   const [isHovered, setIsHovered] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const displayTitle = language === 'en' && project.titleEn ? project.titleEn : project.title;
+  const displayDesc = language === 'en' && project.descriptionEn ? project.descriptionEn : project.description;
+
 
   // Soporte para campo `images` (array) o `image` (string único)
   const images: string[] = (project as any).images?.length
@@ -46,7 +52,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <div className={`pc-default ${isHovered ? 'pc-hidden' : 'pc-visible'}`}>
           {/* Letras decorativas de fondo */}
           <span className="pc-bg-initials" aria-hidden="true">
-            {project.title.split(' ').map(w => w[0]).join('').slice(0, 3).toUpperCase()}
+            {displayTitle.split(' ').map(w => w[0]).join('').slice(0, 3).toUpperCase()}
           </span>
           <div className="pc-default-content">
             <div className="pc-tech-stack">
@@ -57,8 +63,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 <span className="pc-tech-pill pc-tech-more">+{project.technologies.length - 4}</span>
               )}
             </div>
-            <h3 className="pc-project-name">{project.title.split(' - ')[0]}</h3>
-            <p className="pc-hover-hint">Hover para ver más →</p>
+            <h3 className="pc-project-name">{displayTitle.split(' - ')[0]}</h3>
+            <p className="pc-hover-hint">{language === 'en' ? 'Hover to see more →' : 'Hover para ver más →'}</p>
           </div>
         </div>
 
@@ -70,7 +76,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 <Image
                   key={idx}
                   src={src}
-                  alt={`${project.title} - screenshot ${idx + 1}`}
+                  alt={`${displayTitle} - screenshot ${idx + 1}`}
                   fill
                   className={`pc-slide ${idx === currentImage ? 'pc-slide-active' : ''}`}
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -100,8 +106,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       {/* INFO INFERIOR */}
       <div className="portfolio-info">
         <div>
-          <h4>{project.title.split(' - ')[0]}</h4>
-          <p>{project.description}</p>
+          <h4>{displayTitle.split(' - ')[0]}</h4>
+          <p>{displayDesc}</p>
         </div>
         <div className="portfolio-links">
           {project.liveUrl && (
@@ -111,7 +117,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               rel="noopener noreferrer"
               className="btn-small"
             >
-              Ver Demo
+              {t('projects.viewDemo')}
             </a>
           )}
           {project.githubUrl && (
@@ -121,7 +127,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               rel="noopener noreferrer"
               className="btn-small btn-outline"
             >
-              GitHub
+              {t('projects.viewCode')}
             </a>
           )}
         </div>

@@ -1,29 +1,31 @@
 'use client';
 
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function About() {
+  const { t } = useLanguage();
   return (
     <section id="about" className="about">
       <div className="about-img">
         <img src="/avatar.jpeg" alt="Gustavo Ovejero" />
       </div>
       <div className="about-content">
-        <h2 className="heading">Sobre Mí</h2>
-        <h3>Apasionado por la tecnología</h3>
+        <h2 className="heading">{t('about.title')}</h2>
+        <h3>{t('about.subtitle')}</h3>
         <p>
-          Soy desarrollador Full Stack e Instructor en tecnologías web, con experiencia en la construcción de aplicaciones escalables y arquitecturas robustas.
+          {t('about.p1')}
         </p>
         <p>
-          Trabajo principalmente con Java (Spring Boot), Django, React, Next.js y Angular, desarrollando APIs seguras y eficientes junto a interfaces modernas y optimizadas.
+          {t('about.p2')}
         </p>
         <p>
-         Me enfoco en escribir código limpio, mantenible y orientado a resolver problemas reales.
+          {t('about.p3')}
         </p>
         <p>
-          Además de desarrollar, formo nuevos programadores en tecnologías como JavaScript, React y Backend, lo que me permite mantener una base técnica sólida y actualizada constantemente.
+          {t('about.p4')}
         </p>
         <p>
-         🎯 Mi objetivo es crear soluciones con impacto real, combinando buenas prácticas, arquitectura clara y visión de producto.
+          {t('about.p5')}
         </p>
       </div>
     </section>

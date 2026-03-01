@@ -1,14 +1,10 @@
 'use client';
 import AnimatedText from '../ui/AnimatedText';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function Hero() {
-  const specialties = [
-    'Frontend Developer',
-    'Backend Developer',
-    'Unity Game Developer',
-    'Python Developer',
-    'Java Developer',
-  ];
+  const { t } = useLanguage();
+  const specialties = t('hero.specialties');
 
   const ramsinaSymbols = 'フルスタックおよびデオゲームプログラマ'//'ܟܠ ܒܪܢܫܐ ܒܪܝܠܗ ܚܐܪܐ ܘܒܪܒܪ ܓܘ ܐܝܩܪܐ ܘܙܕܩܐ'
     .split('')
@@ -17,12 +13,12 @@ export default function Hero() {
   return (
     <section id="home" className="home">
       <div className="home-content">
-        <h3>👋 Bienvenido a mi Portafolio</h3>
+        <h3>{t('hero.welcome')}</h3>
         <h1>
-          Hola, soy <span>Gustavo Ovejero</span>
+          {t('hero.greeting')}<span>Gustavo Ovejero</span>
         </h1>
         <p>
-          Me especializo en{' '}
+          {t('hero.specialty')}{' '}
           <AnimatedText
             words={specialties}
             symbols={ramsinaSymbols}
@@ -31,16 +27,16 @@ export default function Hero() {
         </p>
         <div className="btn-group">
           <a href="#projects" className="btn">
-            🚀 Ver Proyectos
+            {t('hero.projectsBtn')}
           </a>
           <a href="/CVGustavoJavierOvejero.pdf" target='_blanck' className="btn">
-            Descargar CV
+            {t('hero.cvBtn')}
           </a>
         </div>
         <div className="social-media">
-                <a href="https://github.com/ovejero92"><i className='bx bxl-github'></i></a>
-                <a href="https://www.linkedin.com/in/gustavo-ovejero/"><i className='bx bxl-linkedin'></i></a>
-            </div>
+          <a href="https://github.com/ovejero92"><i className='bx bxl-github'></i></a>
+          <a href="https://www.linkedin.com/in/gustavo-ovejero/"><i className='bx bxl-linkedin'></i></a>
+        </div>
       </div>
       <div className="home-img">
         <div className="circle">

@@ -11,6 +11,7 @@ export default function Home() {
   return (
     <div style={{
       height: '100vh',
+      minHeight: '100svh',
       overflowY: 'scroll',
       scrollSnapType: 'y mandatory',
       position: 'relative',

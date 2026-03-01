@@ -3,8 +3,11 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from '../ThemeToggle';
+import LanguageToggle from '../LanguageToggle';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function Navbar() {
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -17,10 +20,10 @@ export default function Navbar() {
   }, []);
 
   const menuItems = [
-    { label: 'Inicio', href: '#home' },
-    { label: 'Sobre mí', href: '#about' },
-    { label: 'Habilidades', href: '#skills' },
-    { label: 'Proyectos', href: '#projects' },
+    { label: t('nav.home'), href: '#home' },
+    { label: t('nav.about'), href: '#about' },
+    { label: t('nav.skills'), href: '#skills' },
+    { label: t('nav.projects'), href: '#projects' },
   ];
 
   return (
@@ -40,8 +43,9 @@ export default function Navbar() {
 
         <div className="controls">
           <ThemeToggle />
+          <LanguageToggle />
           <a href="#contact" className="btn">
-            Contactame
+            {t('nav.contact')}
           </a>
           <button id="menu-icon" onClick={() => setIsOpen(!isOpen)} aria-label="toggle menu">
             {isOpen ? <X size={24} /> : <Menu size={24} />}

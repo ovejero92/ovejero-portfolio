@@ -1,7 +1,9 @@
 export interface Project {
   id: string;
   title: string;
+  titleEn?: string;
   description: string;
+  descriptionEn?: string;
   image: string;
   technologies: string[];
   liveUrl?: string;
