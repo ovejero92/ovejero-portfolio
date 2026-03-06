@@ -19,7 +19,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const displayDesc = language === 'en' && project.descriptionEn ? project.descriptionEn : project.description;
 
 
-  // Soporte para campo `images` (array) o `image` (string único)
   const images: string[] = (project as any).images?.length
     ? (project as any).images
     : project.image
@@ -48,9 +47,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     >
       <div className="portfolio-media">
 
-        {/* CAPA DEFAULT: nombre + stack (visible cuando NO hay hover) */}
         <div className={`pc-default ${isHovered ? 'pc-hidden' : 'pc-visible'}`}>
-          {/* Letras decorativas de fondo */}
           <span className="pc-bg-initials" aria-hidden="true">
             {displayTitle.split(' ').map(w => w[0]).join('').slice(0, 3).toUpperCase()}
           </span>
@@ -68,7 +65,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
 
-        {/* CAPA HOVER: slideshow de imágenes */}
         <div className={`pc-hover ${isHovered ? 'pc-visible' : 'pc-hidden'}`}>
           {images.length > 0 ? (
             <>
@@ -103,7 +99,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       </div>
 
-      {/* INFO INFERIOR */}
       <div className="portfolio-info">
         <div>
           <h4>{displayTitle.split(' - ')[0]}</h4>

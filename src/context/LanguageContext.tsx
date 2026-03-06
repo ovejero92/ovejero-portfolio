@@ -30,8 +30,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     };
 
     const t = (key: string): any => {
-        // If we haven't mounted yet, default to 'es' to match server render and prevent hydration errors,
-        // though Next.js might still complain if translations differ, so we usually either return the key or the default.
         const currentLangDict = translations[mounted ? language : 'es'];
         return (currentLangDict as Record<string, any>)[key] || key;
     };

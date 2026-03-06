@@ -6,7 +6,6 @@ import { useLanguage } from '../../context/LanguageContext';
 
 export default function Projects() {
   const { t } = useLanguage();
-  // Solo mostrar los 3 primeros proyectos
   const displayProjects = projects.slice(0, 3);
 
   return (

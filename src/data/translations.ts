@@ -31,7 +31,7 @@ export const translations = {
 
         // Projects
         'projects.title': 'Proyectos Destacados',
-        'projects.viewDemo': 'Ver Demo', // Assuming these are buttons
+        'projects.viewDemo': 'Ver Demo',
         'projects.viewCode': 'Ver Código',
 
         // Contact

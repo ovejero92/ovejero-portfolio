@@ -1107,15 +1107,20 @@ span {
 }
 
 .dark .theme-toggle {
-  background: #374151;
-}
+  color: var(--text-dark);
+} 
+
 
 .theme-toggle:hover {
   background: #d1d5db;
+  color: var(--bg-light);
+  transform: scale(1.5);
+  transition: 0.3s ease;
+  margin: 0.5rem;
 }
 
 .dark .theme-toggle:hover {
-  background: #4b5563;
+  background: var(--primary);
 }
 
 @keyframes slideUp {
