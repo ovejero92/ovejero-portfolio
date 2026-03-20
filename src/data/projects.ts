@@ -55,7 +55,7 @@ export const projects: ProjectWithImages[] = [
     '/calia1.png',
     '/calia2.png',
     '/calia3.png',
-    '/calia4.png',
+    '/calia4.jpeg',
   ],
   technologies: ['Node.js', 'Express', 'Handlebars', 'Firebase','Cloudinary', 'JavaScript', 'React'],
   liveUrl: 'https://calia-carteras.vercel.app/',

@@ -1377,3 +1377,258 @@ span {
 .dark .tech-name {
   color: #d1d5db;
 }
+
+/* ══════════════════════════════════════════════
+   TIMELINE — Mi Camino en IT
+   ══════════════════════════════════════════════ */
+
+/* ── Keyframes ── */
+@keyframes timelineFillDown {
+  from { height: 0; }
+  to   { height: 100%; }
+}
+
+@keyframes cardGlowPulse {
+  0%   { box-shadow: 0 0 0px rgba(var(--timeline-rgb), 0);   }
+  50%  { box-shadow: 0 0 28px rgba(var(--timeline-rgb), 0.7);}
+  100% { box-shadow: 0 0 18px rgba(var(--timeline-rgb), 0.35);}
+}
+
+/* ── Section ── */
+.timeline-section {
+  --timeline-color: #667eea;
+  --timeline-rgb:   102, 126, 234;
+  --timeline-color2: #764ba2;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8rem 5% 6rem;
+  min-height: auto;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .timeline-section {
+  --timeline-color: #0ef;
+  --timeline-rgb:   0, 239, 255;
+  --timeline-color2: #00bfff;
+  background: var(--bg-secondary);
+  color: var(--text-light);
+}
+
+/* ── Header ── */
+.timeline-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.timeline-heading {
+  font-size: 3.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--timeline-color) 0%, var(--timeline-color2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.8rem;
+  position: relative;
+  display: inline-block;
+}
+
+.timeline-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--timeline-color), var(--timeline-color2));
+}
+
+.timeline-subheading {
+  font-size: 1.55rem;
+  color: var(--text-gray);
+  margin-top: 1.6rem;
+}
+
+.dark .timeline-subheading {
+  color: #9ca3af;
+}
+
+/* ── Phase labels ── */
+.timeline-phase-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--timeline-color);
+  border: 2px solid var(--timeline-color);
+  border-radius: 2rem;
+  padding: 0.4rem 1.6rem;
+  margin: 1rem 0;
+  opacity: 0.75;
+}
+
+/* ── Wrapper ── */
+.timeline-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 1rem 0;
+}
+
+/* ── Central line ── */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: rgba(var(--timeline-rgb), 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.timeline-fill {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(180deg, var(--timeline-color) 0%, var(--timeline-color2) 100%);
+  border-radius: 4px;
+  transition: none;
+}
+
+/* Trigger animation */
+.timeline-animate .timeline-fill {
+  animation: timelineFillDown 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ── Card wrapper (positions card left or right) ── */
+.timeline-card-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  padding: 1.2rem 0;
+  position: relative;
+}
+
+.timeline-card-wrapper--right {
+  justify-content: flex-end;
+}
+
+/* ── Card ── */
+.timeline-card {
+  position: relative;
+  width: 44%;
+  background: #ffffff;
+  border-radius: 1.4rem;
+  padding: 2rem 2.2rem;
+  border: 1.5px solid rgba(var(--timeline-rgb), 0.2);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  cursor: default;
+}
+
+.dark .timeline-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(var(--timeline-rgb), 0.25);
+}
+
+/* Glow on scroll reach */
+.timeline-card.card-glow {
+  animation: cardGlowPulse 0.8s ease forwards;
+  box-shadow: 0 0 18px rgba(var(--timeline-rgb), 0.35);
+}
+
+/* ── Dot connector ── */
+.timeline-card-dot {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--timeline-color);
+  box-shadow: 0 0 10px rgba(var(--timeline-rgb), 0.6);
+  border: 2px solid #fff;
+}
+
+.dark .timeline-card-dot {
+  border-color: var(--bg-secondary);
+}
+
+/* Left card: dot on the right side */
+.timeline-card--left .timeline-card-dot {
+  right: -7.8%;
+}
+
+/* Right card: dot on the left side */
+.timeline-card--right .timeline-card-dot {
+  left: -7.8%;
+}
+
+/* ── Card text ── */
+.timeline-card-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+
+.dark .timeline-card-title {
+  color: #f3f4f6;
+}
+
+.timeline-card-desc {
+  font-size: 1.35rem;
+  line-height: 1.75;
+  color: var(--text-gray);
+  margin: 0;
+}
+
+.dark .timeline-card-desc {
+  color: #9ca3af;
+}
+
+/* Bottom-phase card style — slightly elevated */
+.timeline-card-wrapper--bottom .timeline-card {
+  border-color: rgba(var(--timeline-rgb), 0.4);
+}
+
+/* ── Responsive: stack vertically on mobile ── */
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 18px;
+  }
+
+  .timeline-card-wrapper,
+  .timeline-card-wrapper--right {
+    justify-content: flex-end;
+    padding-left: 0;
+  }
+
+  .timeline-card {
+    width: 88%;
+  }
+
+  .timeline-card--left .timeline-card-dot,
+  .timeline-card--right .timeline-card-dot {
+    left: auto;
+    right: auto;
+    left: -14%;
+    top: 50%;
+  }
+
+  .timeline-phase-label {
+    font-size: 1rem;
+  }
+}
