@@ -8,8 +8,8 @@
 @media (max-width: 1400px) {
   .img-perfil {
     left: 30px;
-    top: 120px;
-    transform: scale(1.4);
+    top: 75px;
+    transform: scale(1.1);
   }
 }
 /* Desktop */
