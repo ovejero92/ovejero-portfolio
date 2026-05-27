@@ -1,5 +1,6 @@
 'use client';
 import AnimatedText from '../ui/AnimatedText';
+import ExperimentalBanner from '../ui/ExperimentalBanner';
 import { useLanguage } from '../../context/LanguageContext';
 
 export default function Hero() {
@@ -11,6 +12,7 @@ export default function Hero() {
     .filter(c => c !== ' ');
 
   return (
+    <>
     <section id="home" className="home">
       <div className="home-content">
         <h3>{t('hero.welcome')}</h3>
@@ -44,5 +46,7 @@ export default function Hero() {
         </div>
       </div>
     </section>
+    <ExperimentalBanner />
+    </>
   );
 }
