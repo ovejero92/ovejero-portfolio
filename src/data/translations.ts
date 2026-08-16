@@ -48,6 +48,11 @@ export const translations = {
         'projects.viewDemo': 'Ver Demo',
         'projects.viewCode': 'Ver Código',
 
+        // Projects
+        'projectsPM.title': 'PM, Scrum Master & Tech Lead',
+        'projectsPM.viewDemo': 'Ver Demo',
+        'projectsPM.viewCode': 'Ver Código',
+
         // Contact
         'contact.title': 'Vamos a conectar',
         'contact.subtitle': 'Estoy siempre disponible para nuevos proyectos o colaboraciones. Contáctame y hablemos.',

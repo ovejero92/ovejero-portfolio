@@ -31,7 +31,7 @@ export default function Hero() {
           <a href="#projects" className="btn">
             {t('hero.projectsBtn')}
           </a>
-          <a href="/CVGustavoJavierOvejero.pdf" target='_blanck' className="btn">
+          <a href="/CV - Gustavo Javier Ovejero.pdf" target='_blanck' className="btn">
             {t('hero.cvBtn')}
           </a>
         </div>
@@ -42,7 +42,7 @@ export default function Hero() {
       </div>
       <div className="home-img">
         <div className="circle">
-          <img src="/perfil.webp" alt="Avatar de Gustavo Ovejero" className="img-perfil" />
+          <img src="/perfil.jpeg" alt="Avatar de Gustavo Ovejero" className="img-perfil" />
         </div>
       </div>
     </section>

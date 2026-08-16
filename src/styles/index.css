@@ -7,8 +7,8 @@
 /* Desktop grande */
 @media (max-width: 1400px) {
   .img-perfil {
-    left: 30px;
-    top: 75px;
+    left: 0px;
+    top: 5px;
     transform: scale(1.1);
   }
 }
@@ -159,12 +159,17 @@
   }
 
   .logo {
-    font-size:3rem;
+    font-size:7rem;
     margin-bottom: 1.5rem;
   }
 
   .theme-toggle {
-    transform: scale(0.8);
+    margin: 0 10px;
+    /* transform: scale(0.8); */
+  }
+  .theme-toggle:hover {
+    
+    transform:none;
   }
   .navBar a::after {
     display: none;
@@ -219,7 +224,6 @@
     width: 70vw;
     max-width: 280px;
     left: -10px;
-    top: 60px;
     transform: scale(1.2);
     }
     .home {
@@ -231,8 +235,8 @@
 
     .home-content{
     position: relative;
-    right: 120px;
-    bottom: 60px;
+    top: 70px;
+    transform: scale(1.5);
     }
     .home-content h1,
     .home-content h3,
@@ -278,15 +282,18 @@
         padding: 0.8rem 2rem;
         font-size: 1.4rem;
     }
-    .about{
-      width: 100%;
-      flex-direction: row;
-      flex-wrap: nowrap;
-    }
     .about-img,
 .about-content {
-  position: static; /* 👈 vuelve al flujo normal */
-  padding-top: 70px;
+ /*  position: static; 👈 vuelve al flujo normal */
+
+ padding-top: 70px;
+}
+.about-content{
+  position: relative;
+  bottom: 90px;
+  left: 0px;
+  transform: scale(1);
+  padding:120px 0 0 0;
 }
 .about-img{
   width: 200px;
@@ -368,6 +375,7 @@
     .header{
       padding: 1rem 2%;
       width: 100%;
+      
     }
 
 .navBar.desktop-nav {
@@ -398,16 +406,8 @@
       
     }
     .circle {
-      position: absolute; 
-       top: 50px;
-      left:420px;
+      top: -140px;
     }
-    /* .home-img img,
-    .about-img img {
-        width: 70vw;
-        max-width: 250px;
-    } */
-
     .contact form .input-box input {
         width: 100%;
     }
@@ -489,6 +489,7 @@
     font-size: 0.8rem;
     border-radius: 0.7rem;
   }
+ 
 
   .home-content h1 {
     font-size: 1.3rem;

@@ -410,12 +410,13 @@ html:not(.dark) div::-webkit-scrollbar-track {
 }
 
 .home-img img {
-    width: 25vw;
+    width: 30vw;
     max-width: 500px;
     min-width: 200px;
     position: relative;
     z-index: 1;
-    object-fit: cover;
+    /* object-fit: cover; */
+    
 }
 .circle {
   width: 400px;
@@ -1631,4 +1632,13 @@ span {
   .timeline-phase-label {
     font-size: 1rem;
   }
-}
+}
+
+@media (max-width: 412px) {
+  .home{
+    flex-direction: column;
+  }
+  .circle{
+    display: block;
+  }
+}

@@ -7,6 +7,7 @@ import Timeline from '@/components/sections/Timeline';
 import TechStack from '@/components/sections/TechStack';
 import Projects from '@/components/sections/Projects';
 import Contact from '@/components/sections/Contact';
+import ProjectsPM from "@/components/sections/ProjectsPM";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <Timeline />
         <TechStack />
         <Projects />
+        <ProjectsPM />
         <Contact />
       </main>
     </div>
