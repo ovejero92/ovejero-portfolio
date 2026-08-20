@@ -1,7 +1,7 @@
 
 @media (min-width: 1800px) {
   .img-perfil {
-    transform: translate(-50%, -52%) scale(0.8);
+    transform: translate(-50%, -57%) scale(0.8);
   }
 }
 /* Desktop grande */
@@ -224,6 +224,7 @@
     width: 70vw;
     max-width: 280px;
     left: -10px;
+    top: 0;
     transform: scale(1.2);
     }
     .home {
@@ -282,40 +283,7 @@
         padding: 0.8rem 2rem;
         font-size: 1.4rem;
     }
-    .about-img,
-.about-content {
- /*  position: static; 👈 vuelve al flujo normal */
-
- padding-top: 70px;
-}
-.about-content{
-  position: relative;
-  bottom: 90px;
-  left: 0px;
-  transform: scale(1);
-  padding:120px 0 0 0;
-}
-.about-img{
-  width: 200px;
-}
-    .about-img img{
-      width: 100px;
-    }
-
-    .about-content h2 {
-        font-size: 3.4rem;
-        text-align: center;
-    }
-
-    .about-content h3 {
-        font-size: 2.5rem;
-    }
-
-    .about-content p {
-      font-weight: 600;
-      font-size: 1.3rem;
-    }
-
+    
     .portfolio-container {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -346,13 +314,29 @@
     padding: 3rem 1rem;
   }
 
+  .tech-stack-section--dual {
+    padding: 7rem 1rem 1.4rem;
+    gap: 0.9rem;
+    justify-content: center;
+  }
+
   .tech-stack-title {
     font-size: 2.2rem;
     margin-bottom: 2rem;
   }
 
+  .tech-stack-section--dual .tech-stack-title {
+    font-size: 2rem;
+    margin-bottom: 0.7rem;
+  }
+
   .tech-carousel-container {
     padding: 2rem 0;
+  }
+
+  .tech-stack-section--dual .tech-carousel-container {
+    height: 140px;
+    padding: 1rem 0.6rem;
   }
 
   .tech-item {
@@ -369,16 +353,25 @@
     font-size: 0.85rem;
   }
 }
+.about-reveal-toggle {
+  display: none;
+}
+
 /* Mobile grande */
 @media (max-width: 576px) {
+  .header {
+    padding: 1rem 2%;
+    width: 100%;
+    max-width: 100%;
+  }
 
-    .header{
-      padding: 1rem 2%;
-      width: 100%;
-      
-    }
+  .container-custom {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 0.8rem;
+  }
 
-.navBar.desktop-nav {
+  .navBar.desktop-nav {
     display: none !important;
   }
 
@@ -388,33 +381,92 @@
 
   .navBar.mobile-nav {
     display: none;
+    width: 100%;
+    max-width: 100%;
   }
 
   .navBar.mobile-nav.active {
     display: flex;
   }
-    .home-content h1 {
-        font-size: 2.4rem;
-    }
 
-    .home-content h3 {
-        font-size: 1.6rem;
-    }
-    .home-img{
-      position: relative;
-      width: 100%;
-      
-    }
-    .circle {
-      top: -140px;
-    }
-    .contact form .input-box input {
-        width: 100%;
-    }
-   
+  .home,
+  .home-content,
+  .home-img {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Mismo tamaño visual que scale(1.5), pero el ancho previo al scale
+     es 100/1.5 para que al agrandar no genere scroll en X. */
+  .home-content {
+    width: 66.666%;
+    max-width: 66.666%;
+    margin-left: auto;
+    margin-right: auto;
+    transform: scale(1.5) ;
+    left: 0;
+    top: 40px;
+  }
+
+  .home-content h1,
+  .home-content h3,
+  .home-content p,
+  .btn-group {
+    transform: none;
+    width: 100%;
+  }
+
+  .home-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .home-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .home-content p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .home-img {
+    position: relative;
+    width: 100%;
+  }
+
+  .circle {
+    left: 50%;
+    top: -150px;
+    /* transform: translateX(-50%); */
+  }
+
+  .contact form .input-box input {
+    width: 100%;
+  }
+
   .tech-stack-title {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
+  }
+
+  .tech-stack-section--dual {
+    padding: 6.6rem 0.7rem 1.2rem;
+    gap: 0.7rem;
+    min-height: 100vh;
+  }
+
+  .tech-stack-section--dual .tech-stack-title {
+    font-size: 28px;
+    margin-bottom: 0.45rem;
+    margin-top: 10px;
+  }
+
+  .tech-stack-section--dual .tech-carousel-container {
+    height: 148px;
+    padding: 0.6rem 0.4rem;
+    margin: 30px 0;
+    border-radius: 1.2rem;
   }
 
   .tech-item {
@@ -429,6 +481,477 @@
 
   .tech-name {
     font-size: 0.75rem;
+  }
+
+  .about {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 19.5rem 1rem 2rem;
+  }
+
+  .about-img,
+  .about-content {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .about-img {
+    width: 100%;
+    padding-top: 3.2rem;
+    margin-bottom: 0;
+    transform: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-img img {
+    width: 100%;
+    max-width: 300px;
+    min-width: 0;
+    height: auto;
+  }
+
+  .about-content {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    padding: 0 1rem;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  .about-content h2,
+  .about-content .heading {
+    position: absolute;
+    top: 10.6rem;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    width: 100%;
+    font-size: 5.6rem;
+    text-align: center;
+    margin: 0 0 0 0;
+    color: var(--primary);
+  }
+ /* .heading {
+  margin-top: 200px;
+ } */
+  .about-content h3,
+  .descripcion h3 {
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
+    margin-bottom: 0.5rem;
+  }
+
+  .descripcion {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    max-width: 320px;
+    padding: 0 0.75rem;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 2;
+  }
+
+  .about .descripcion p,
+  .descripcion p {
+    width: 100%;
+    max-width: 100%;
+    margin: 0.35rem 0;
+    margin-left: 0;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+  }
+
+  .about-img {
+    position: relative;
+  }
+
+  .about-reveal-toggle {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 3.2rem;
+    bottom: 0;
+    width: 100%;
+    max-width: 300px;
+    transform: translateX(-50%);
+    z-index: 4;
+    margin: 0;
+    padding: 0 0 1.1rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .about-reveal-toggle::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 20, 28, 0);
+    transition: background 0.35s ease;
+    pointer-events: none;
+  }
+
+  .about.is-revealed .about-reveal-toggle::before {
+    background: rgba(15, 20, 28, 0.58);
+  }
+
+  .about-reveal-hint {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 0.95rem;
+    border-radius: 999px;
+    background: rgba(15, 20, 28, 0.78);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+    animation: aboutHintPulse 2.4s ease-in-out infinite;
+  }
+
+  .about.is-revealed .about-reveal-hint {
+    animation: none;
+    background: rgba(15, 20, 28, 0.62);
+  }
+
+  .descripcion {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    pointer-events: none;
+  }
+
+  .about.is-revealed .descripcion {
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
+  }
+
+  .timeline-section {
+    padding: 7.4rem 1.15rem 2.2rem;
+    align-items: stretch;
+    overflow-x: hidden;
+  }
+
+  .timeline-section .timeline-header {
+    margin-bottom: 1rem;
+    padding: 0 0.2rem;
+  }
+
+  .timeline-section .timeline-heading,
+  .timeline-section .timeline-heading.heading {
+    position: static;
+    top: auto;
+    display: block;
+    width: 100%;
+    font-size: 26px;
+    line-height: 1.2;
+    margin: 0 0 0.35rem;
+  }
+
+  .timeline-section .timeline-heading::after {
+    width: 48px;
+    height: 3px;
+    bottom: -8px;
+  }
+
+  .timeline-section .timeline-subheading {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+
+  .timeline-section .timeline-phase-label {
+    display: none;
+  }
+
+  .timeline-section .timeline-wrapper {
+    width: 100%;
+    max-width: none;
+    padding: 0.2rem 0 0.4rem;
+  }
+
+  .timeline-section .timeline-line {
+    left: 11px;
+    width: 3px;
+    transform: none;
+  }
+
+  .timeline-section .timeline-card-wrapper,
+  .timeline-section .timeline-card-wrapper--right {
+    justify-content: flex-end;
+    width: 100%;
+    padding: 0.5rem 0 0.5rem 2.15rem;
+  }
+
+  .timeline-section .timeline-card {
+    width: 100%;
+    padding: 1.05rem 1.1rem;
+    border-radius: 1.1rem;
+  }
+
+  .timeline-section .timeline-card--left .timeline-card-dot,
+  .timeline-section .timeline-card--right .timeline-card-dot {
+    left: -22px;
+    right: auto;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+  }
+
+  .timeline-section .timeline-card-title {
+    font-size: 16px;
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
+  }
+
+  .timeline-section .timeline-card-desc {
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  /* ── Portfolio sections (featured, frameworks, teams) ── */
+  .portfolio {
+    padding: 6.8rem 0 1.4rem;
+    min-height: 100vh;
+    justify-content: flex-start;
+    overflow-x: hidden;
+  }
+
+  .portfolio-title {
+    position: static;
+    top: auto;
+    font-size: 22px;
+    margin: 0 1rem 0.35rem;
+    padding-top: 0;
+    line-height: 1.2;
+  }
+
+  .portfolio-subtitle {
+    font-size: 13px;
+    line-height: 1.45;
+    margin: 0 auto 0.85rem;
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+
+  .portfolio-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 0.85rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem 0.6rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .portfolio-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .portfolio-grid .portfolio-card {
+    flex: 0 0 88vw;
+    scroll-snap-align: center;
+    height: auto;
+    min-height: 0;
+    max-width: 88vw;
+  }
+
+  .portfolio-grid--teams .portfolio-card {
+    flex: 0 0 88vw;
+  }
+
+  .portfolio-media {
+    height: 180px;
+  }
+
+  .pc-project-name {
+    font-size: 18px;
+  }
+
+  .pc-tech-pill {
+    font-size: 10px;
+    padding: 0.18rem 0.5rem;
+  }
+
+  .pc-hover-hint {
+    font-size: 11px;
+  }
+
+  .pc-hover-hint--desktop {
+    display: none;
+  }
+
+  .pc-hover-hint--mobile {
+    display: block;
+  }
+
+  .portfolio-info {
+    padding: 0.85rem 0.9rem 0.95rem;
+    gap: 0.65rem;
+  }
+
+  .portfolio-info h4 {
+    font-size: 15px;
+    margin-bottom: 0.35rem;
+  }
+
+  .portfolio-info p {
+    font-size: 12.5px;
+    line-height: 1.45;
+    font-weight: 500;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .portfolio-links {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.45rem;
+  }
+
+  .btn-small {
+    flex: 1;
+    min-width: 0;
+    font-size: 11px;
+    padding: 0.42rem 0.5rem;
+    border-radius: 1rem;
+  }
+
+  .pc-bg-initials {
+    font-size: 5rem;
+    right: 0.5rem;
+    bottom: 0.2rem;
+    transform: none;
+  }
+
+  /* ── Contact ── */
+  .contact {
+    padding: 6.5rem 1rem 0;
+    min-height: 100vh;
+    justify-content: space-between;
+  }
+
+  .contact-inner {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 0.25rem;
+  }
+
+  .contact .heading,
+  .contact-title {
+    position: static;
+    top: auto;
+    font-size: 24px;
+    margin-bottom: 0.45rem;
+  }
+
+  .contact-subtitle {
+    font-size: 14px;
+    margin-bottom: 1rem;
+    padding: 0 0.25rem;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 0.85rem;
+  }
+
+  .contact form .input-box {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .contact form .input-box input,
+  .contact form input,
+  .contact form textarea {
+    width: 100% !important;
+    font-size: 14px !important;
+    padding: 0.75rem 0.9rem !important;
+    margin: 0.35rem 0;
+    border-radius: 0.65rem;
+  }
+
+  .contact form textarea {
+    min-height: 110px;
+  }
+
+  .contact-submit,
+  .contact form .btn {
+    width: 100%;
+    max-width: 100%;
+    font-size: 14px !important;
+    padding: 0.75rem 1rem !important;
+    margin-top: 0.5rem;
+  }
+
+  .contact-direct {
+    font-size: 13px;
+    margin-bottom: 1rem;
+    padding: 0 0.15rem;
+  }
+
+  .contact-footer {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .contact-footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.65rem;
+    padding: 0.5rem 0.25rem;
+  }
+
+  .contact-footer .derechos {
+    font-size: 11px;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .contact-back-top {
+    font-size: 12px !important;
+    padding: 0.55rem 1rem !important;
+  }
+}
+
+@keyframes aboutHintPulse {
+  0%, 100% { transform: translateY(0); opacity: 0.9; }
+  50% { transform: translateY(-4px); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-reveal-hint {
+    animation: none;
   }
 }
 /* Mobile pequeño */
@@ -457,19 +980,29 @@
   }
 
   .container-custom {
-    padding: 0.5rem 5rem;
+    padding: 0.5rem 0.8rem;
     flex-direction: row;
     align-items: center;
-    /* text-align: center; */
+    max-width: 100%;
   }
 
   .logo {
     font-size: 5.2rem;
     position: relative;
-    bottom: 10px;
     right: 10px;
-  }
 
+  }
+.btn {
+ transform: none;
+ margin: 0;
+}
+   .circle img {
+    width: 70vw;
+    max-width: 280px;
+    left: -10px;
+    top: 0;
+    transform: scale(1.2);
+    }
   .navBar a {
     font-size: 1rem;
     padding: 0.3rem 0.5rem;
@@ -483,17 +1016,6 @@
     font-size: 0.8rem;
     border-radius: 0.7rem;
   }
- 
-
-  .home-content h1 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .home-content p {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-  }
 
   .img-perfil {
     max-width: 180px;
@@ -502,61 +1024,9 @@
     transform: translate(-50%, 0) scale(0.9);
   }
 
-  .about-content h2,
-  .heading {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-  }
-
+  .about .descripcion p,
   .about-content p {
-    font-size: 0.7rem;
-    margin-bottom: 1rem;
+    font-size: 13px;
+    margin-bottom: 0.35rem;
   }
-
-  .portfolio-title {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
-
-  .portfolio-grid {
-    gap: 0.7rem;
-  }
-
-  .portfolio-card {
-    border-radius: 0.7rem;
-    box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.1);
-  }
-
-  .portfolio-info h4 {
-    font-size: 0.9rem;
-  }
-
-  .portfolio-info p {
-    font-size: 0.7rem;
-  }
-
-  .contact h2 {
-    font-size: 1.2rem;
-    margin-bottom: 0.7rem;
-  }
-
-  .contact form {
-    max-width: 95vw;
-    padding: 0.5rem;
-  }
-
-  .contact form input,
-  .contact form textarea {
-    font-size: 0.8rem;
-    padding: 0.5rem;
-    border-radius: 0.4rem;
-  }
-
-  .contact form .btn {
-    font-size: 0.8rem;
-    padding: 0.5rem 1rem;
-    border-radius: 0.7rem;
-  }
-
-
 }

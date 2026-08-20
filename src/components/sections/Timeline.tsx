@@ -6,16 +6,17 @@ import { useLanguage } from '../../context/LanguageContext';
 interface Milestone {
   titleKey: string;
   descKey: string;
+  icon: string;
   side: 'left' | 'right';
   phase: 'top' | 'bottom';
 }
 
 const milestones: Milestone[] = [
-  { titleKey: 'timeline.m1.title', descKey: 'timeline.m1.desc', side: 'left',  phase: 'top' },
-  { titleKey: 'timeline.m2.title', descKey: 'timeline.m2.desc', side: 'right', phase: 'top' },
-  { titleKey: 'timeline.m3.title', descKey: 'timeline.m3.desc', side: 'left',  phase: 'top' },
-  { titleKey: 'timeline.m4.title', descKey: 'timeline.m4.desc', side: 'right', phase: 'bottom' },
-  { titleKey: 'timeline.m5.title', descKey: 'timeline.m5.desc', side: 'left',  phase: 'bottom' },
+  { titleKey: 'timeline.m1.title', descKey: 'timeline.m1.desc', icon: 'fa-gamepad', side: 'left', phase: 'top' },
+  { titleKey: 'timeline.m2.title', descKey: 'timeline.m2.desc', icon: 'fa-book-open', side: 'right', phase: 'top' },
+  { titleKey: 'timeline.m3.title', descKey: 'timeline.m3.desc', icon: 'fa-chalkboard-user', side: 'left', phase: 'top' },
+  { titleKey: 'timeline.m4.title', descKey: 'timeline.m4.desc', icon: 'fa-graduation-cap', side: 'right', phase: 'bottom' },
+  { titleKey: 'timeline.m5.title', descKey: 'timeline.m5.desc', icon: 'fa-rocket', side: 'left', phase: 'bottom' },
 ];
 
 export default function Timeline() {
@@ -47,7 +48,7 @@ export default function Timeline() {
   }, [animated]);
 
   const scheduleCardGlows = () => {
-    const totalDuration = 3000; // ms — matches CSS animation duration
+    const totalDuration = 3000;
     const count = milestones.length;
 
     milestones.forEach((_, i) => {
@@ -61,25 +62,23 @@ export default function Timeline() {
 
   return (
     <section id="timeline" className="timeline-section" ref={sectionRef}>
-      {/* Header */}
       <div className="timeline-header">
         <h2 className="timeline-heading heading">{t('timeline.title')}</h2>
         <p className="timeline-subheading">{t('timeline.subtitle')}</p>
       </div>
 
-      {/* Divider label */}
       <div className="timeline-phase-label timeline-phase-top">
-        <span>⬆ {/* Los primeros pasos */}</span>
+        <span>
+          <i className="fa-solid fa-arrow-up fa-icon-inline" aria-hidden="true" />
+          {t('timeline.phaseTop')}
+        </span>
       </div>
 
-      {/* Timeline body */}
       <div className="timeline-wrapper">
-        {/* Central line track + fill */}
         <div className="timeline-line">
           <div className="timeline-fill" ref={fillRef} />
         </div>
 
-        {/* Cards */}
         {milestones.map((m, i) => (
           <div
             key={i}
@@ -90,16 +89,21 @@ export default function Timeline() {
               ref={(el) => { cardRefs.current[i] = el; }}
             >
               <div className="timeline-card-dot" />
-              <h3 className="timeline-card-title">{t(m.titleKey)}</h3>
+              <h3 className="timeline-card-title">
+                <i className={`fa-solid ${m.icon} fa-icon-inline`} aria-hidden="true" />
+                {t(m.titleKey)}
+              </h3>
               <p className="timeline-card-desc">{t(m.descKey)}</p>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Divider label bottom */}
       <div className="timeline-phase-label timeline-phase-bottom">
-        <span>⬇ {/* El presente */}</span>
+        <span>
+          <i className="fa-solid fa-arrow-down fa-icon-inline" aria-hidden="true" />
+          {t('timeline.phaseBottom')}
+        </span>
       </div>
     </section>
   );

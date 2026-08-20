@@ -9,9 +9,9 @@ export default function Projects() {
   const displayProjects = projects.slice(0, 3);
 
   return (
-    <section id="projects" className="portfolio">
+    <section id="projects" className="portfolio portfolio--featured">
       <h2 className="portfolio-title">{t('projects.title')}</h2>
-      <div className="portfolio-grid">
+      <div className="portfolio-grid portfolio-grid--scroll">
         {displayProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

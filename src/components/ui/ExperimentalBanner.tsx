@@ -1,13 +1,11 @@
 'use client';
 
 import { useFeatureFlag } from '@/hooks/useFeatureFlag';
+import { useLanguage } from '@/context/LanguageContext';
 
-/**
- * Banner flotante controlado por la flag `mostrar-banner-experimental` de FlagFlow.
- * Se muestra únicamente si el server devuelve { enabled: true } para el visitante.
- */
 export default function ExperimentalBanner() {
   const { enabled } = useFeatureFlag('mostrar-banner-experimental', 'visitante');
+  const { t } = useLanguage();
 
   if (!enabled) {
     return null;
@@ -31,7 +29,8 @@ export default function ExperimentalBanner() {
         maxWidth: '20rem',
       }}
     >
-      ✨ Nueva sección de proyectos interactivos próximamente
+      <i className="fa-solid fa-wand-magic-sparkles fa-icon-inline" aria-hidden="true" />
+      {t('banner.experimental')}
     </div>
   );
 }

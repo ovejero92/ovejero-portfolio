@@ -15,7 +15,10 @@ export default function Hero() {
     <>
     <section id="home" className="home">
       <div className="home-content">
-        <h3>{t('hero.welcome')}</h3>
+        <h3>
+          <i className="fa-regular fa-hand fa-icon-inline" aria-hidden="true" />
+          {t('hero.welcome')}
+        </h3>
         <h1>
           {t('hero.greeting')}<span>Gustavo Ovejero</span>
         </h1>
@@ -29,6 +32,7 @@ export default function Hero() {
         </p>
         <div className="btn-group">
           <a href="#projects" className="btn">
+            <i className="fa-solid fa-rocket fa-icon-inline" aria-hidden="true" />
             {t('hero.projectsBtn')}
           </a>
           <a href="/CV - Gustavo Javier Ovejero.pdf" target='_blanck' className="btn">

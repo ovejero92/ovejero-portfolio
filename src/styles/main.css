@@ -416,7 +416,6 @@ html:not(.dark) div::-webkit-scrollbar-track {
     position: relative;
     z-index: 1;
     /* object-fit: cover; */
-    
 }
 .circle {
   width: 400px;
@@ -584,9 +583,35 @@ html:not(.dark) div::-webkit-scrollbar-track {
   /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
   background-color: #0c4a6e;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   background-clip: text;
   position: relative;
-  top: 1rem;
+  top: 0;
+  margin-bottom: 0.6rem;
+}
+
+.portfolio-subtitle {
+  text-align: center;
+  font-size: 1.35rem;
+  color: var(--text-gray);
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  line-height: 1.55;
+  padding: 0 1rem;
+}
+
+.dark .portfolio-subtitle {
+  color: #9ca3af;
+}
+
+.pc-hover-hint--mobile {
+  display: none;
+}
+
+.btn-small--placeholder {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .dark .portfolio-title {
@@ -599,6 +624,16 @@ html:not(.dark) div::-webkit-scrollbar-track {
   gap: 2rem;
   width: 90%;
   max-width: 1400px;
+}
+
+.portfolio-grid--teams {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1100px;
+}
+
+.portfolio--frameworks .portfolio-grid {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1200px;
 }
 
 .portfolio-card {
@@ -985,7 +1020,80 @@ html:not(.dark) div::-webkit-scrollbar-track {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 5rem 2rem 0;
+}
+
+.contact-inner {
+  width: 100%;
+  max-width: 70rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
   justify-content: center;
+}
+
+.contact-title {
+  margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+  text-align: center;
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
+  color: var(--text-gray);
+  line-height: 1.55;
+  max-width: 640px;
+}
+
+.dark .contact-subtitle {
+  color: #9ca3af;
+}
+
+.contact-direct {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--text-gray);
+  margin: 0 0 1.5rem;
+  line-height: 1.55;
+}
+
+.contact-direct a {
+  color: var(--primary);
+  word-break: break-word;
+}
+
+.dark .contact-direct {
+  color: #9ca3af;
+}
+
+.contact-submit {
+  width: 100%;
+  max-width: 22rem;
+}
+
+.contact-footer-inner {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-back-top {
+  white-space: nowrap;
+}
+
+.fa-icon-inline {
+  margin-right: 0.45em;
+  color: var(--primary);
+}
+
+.timeline-card-title .fa-icon-inline,
+.contact-title .fa-icon-inline,
+.about-goal .fa-icon-inline {
+  margin-right: 0.5em;
 }
 
 .dark .contact {
@@ -1204,6 +1312,20 @@ span {
   background: var(--bg-light);
   min-height: 100vh;
   padding: 4rem 2rem;
+  gap: 1.6rem;
+}
+
+.tech-stack-section--dual {
+  padding: 6.5rem 2rem 2.4rem;
+  gap: 1.4rem;
+  justify-content: center;
+}
+
+.tech-stack-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .dark .tech-stack-section {
@@ -1220,6 +1342,34 @@ span {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.tech-stack-section--dual .tech-stack-title {
+  font-size: 2.8rem;
+  margin-bottom: 1.1rem;
+}
+
+.tech-stack-title--secondary {
+  margin-top: 0.4rem;
+}
+
+.tech-stack-section--dual .tech-carousel-container {
+  height: 198px;
+  padding: 1.rem 1.6rem;
+}
+
+.tech-carousel--reverse {
+  animation-name: infiniteScrollReverse;
+}
+
+@keyframes infiniteScrollReverse {
+  0% {
+    transform: translateX(calc(-33.333% - 2rem));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .dark .tech-stack-title {
@@ -1583,6 +1733,9 @@ span {
   margin-bottom: 0.8rem;
   color: var(--text-dark);
   line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35rem;
 }
 
 .dark .timeline-card-title {

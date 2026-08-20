@@ -6,14 +6,14 @@ import ProjectCardPM from '../ui/ProjectCardPM';
 
 export default function ProjectsPM() {
   const { t } = useLanguage();
-  const displayProjectsPM = projectsPM.slice(0, 3);
 
   return (
-    <section id="projects" className="portfolio">
+    <section id="projects-pm" className="portfolio portfolio--teams">
       <h2 className="portfolio-title">{t('projectsPM.title')}</h2>
-      <div className="portfolio-grid">
-        {displayProjectsPM.map((projectPM) => (
-          <ProjectCardPM key={projectPM.id} project={projectPM} />
+      <p className="portfolio-subtitle">{t('projectsPM.subtitle')}</p>
+      <div className="portfolio-grid portfolio-grid--teams">
+        {projectsPM.map((project) => (
+          <ProjectCardPM key={project.id} project={project} />
         ))}
       </div>
     </section>
