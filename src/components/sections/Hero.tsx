@@ -36,6 +36,7 @@ export default function Hero() {
             {t('hero.projectsBtn')}
           </a>
           <a href="/CV - Gustavo Javier Ovejero.pdf" target='_blanck' className="btn">
+            <i className="fa-solid fa-file-arrow-down fa-icon-inline" aria-hidden="true" />
             {t('hero.cvBtn')}
           </a>
         </div>

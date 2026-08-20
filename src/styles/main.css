@@ -1090,6 +1090,12 @@ html:not(.dark) div::-webkit-scrollbar-track {
   color: var(--primary);
 }
 
+.btn .fa-icon-inline,
+.btn .bx {
+  margin-right: 0;
+  color: inherit;
+}
+
 .timeline-card-title .fa-icon-inline,
 .contact-title .fa-icon-inline,
 .about-goal .fa-icon-inline {
